@@ -8,9 +8,21 @@ Diffusion models are a type of generative model that use the process of diffusio
 
 
 ## Use Case
-Imagine you're a stylist who wants to get inspired by new interior designs, or even someone who likes to change his living room's look from time to time. This solution will give you an infinity of interior designs, 
+This solution offers endless inspiration for interior design enthusiasts, from stylists seeking fresh ideas to individuals looking to refresh their living spaces. With a Moroccan spice, the program generates an array of interior designs made specially to your current room design. All you need to do is upload a photo of your space, and let the program do its magic.
 
 ## Techniques Used
+Under the hood, our app relies on [ControlNet](https://github.com/lllyasviel/ControlNet), which is a neural network structure to control diffusion models (**In this case a fine-tuned diffusion models on Moroccan interior design**).
+
+As a first step, we fine-tuned `CompVis/stable-diffusion-v1-4` on a dataset of (~200 images of [Moroccan living rooms](#)) using [DreamBooth].
+
+- **Notebook** : https://colab.research.google.com/github/huggingface/diffusion-models-class/blob/main/hackathon/dreambooth.ipynb#scrollTo=b139c7fe-eec2-43fc-94da-ac4ecaae73f7
+- **Model** : https://huggingface.co/medmac01/beldi-moroccan-interior-2
+
+As a second step, we used the model together with [ControlNet model for canny edges](https://huggingface.co/lllyasviel/) through a Pipeline which we used later to generate images from image+text.
+
+- **Notebook** : https://colab.research.google.com/github/huggingface/diffusion-models-class/blob/main/hackathon/dreambooth.ipynb#scrollTo=b139c7fe-eec2-43fc-94da-ac4ecaae73f7
+- **Model** : https://huggingface.co/medmac01/beldi-moroccan-interior-2
+
 ### DreamBooth
 
 
