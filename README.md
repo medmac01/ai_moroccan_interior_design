@@ -33,7 +33,7 @@ model_id = "medmac01/moroccaninteriour-controlNet"
 pipeline = DiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float16)
 pipeline = pipeline.to("cuda")
 
-image = np.array(image)  # The Input Image
+image = np.array(Image.open('path_to_image'))  # The Input Image
 
 low_threshold = 150
 high_threshold = 250
