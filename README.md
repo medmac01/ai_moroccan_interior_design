@@ -20,8 +20,8 @@ As a first step, we fine-tuned `CompVis/stable-diffusion-v1-4` on a dataset of (
 
 As a second step, we used the model together with [ControlNet model for canny edges](https://huggingface.co/lllyasviel/) through a Pipeline which we used later to generate images from image+text.
 
-- **Notebook** : https://colab.research.google.com/github/huggingface/diffusion-models-class/blob/main/hackathon/dreambooth.ipynb#scrollTo=b139c7fe-eec2-43fc-94da-ac4ecaae73f7
-- **Model** : https://huggingface.co/medmac01/beldi-moroccan-interior-2
+- **Notebook** : https://colab.research.google.com/drive/1KBZEeWUMcOy_fZygz25D9bPA-xvKcd_q#scrollTo=wsv55Py8onJx
+- **Model** : https://huggingface.co/medmac01/moroccaninteriour-controlNet
 
 ### DreamBooth
 
