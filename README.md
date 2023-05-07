@@ -57,5 +57,14 @@ In order to fine-tune our diffusion model, we collected a dataset of ~200 imgs o
 We first resized our images to (512,512) and then trained the model. But this approach was not efficient as our model learned to generate squeezed objects. The remedy was to crop the images and use every possible part of the image (so no data is lost :D)
 
 ## Results
+- **DreamBooth** : Generating an image of a moroccan church
+<p align="center"><img width="30%" src="demo/church_moroccan_style.png"></p>
+  
+- **ControlNet**
+  
+*Original Image*
 
-
+<p align="center"><img width="30%" src="demo/original.jpg"></p>
+  
+*Output Image*
+<p align="center"><img width="30%" src="demo/output.png"></p>
