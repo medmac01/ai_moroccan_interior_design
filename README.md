@@ -23,6 +23,34 @@ As a second step, we used the model together with [ControlNet model for canny ed
 - **Notebook** : https://colab.research.google.com/drive/1KBZEeWUMcOy_fZygz25D9bPA-xvKcd_q#scrollTo=wsv55Py8onJx
 - **Model** : https://huggingface.co/medmac01/moroccaninteriour-controlNet
 
+```python
+from diffusers import DiffusionPipeline
+import torch
+import cv2
+import numpy as np
+
+model_id = "medmac01/moroccaninteriour-controlNet"
+pipeline = DiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float16)
+pipeline = pipeline.to("cuda")
+
+image = np.array(image)  # The Input Image
+
+low_threshold = 150
+high_threshold = 250
+
+image = cv2.Canny(image, low_threshold, high_threshold)
+image = image[:, :, None]
+image = np.concatenate([image, image, image], axis=2)
+canny_image = Image.fromarray(image)
+
+output = pipeline(
+    prompt,
+    canny_image,
+    negative_prompt=negative_prompt, 
+    num_inference_steps=20,
+).images[0]  
+```
+
 ## Dataset && Preprocessing
 In order to fine-tune our diffusion model, we collected a dataset of ~200 imgs of Moroccan interior designs. Theses images represent our class **'beldi'** that we trained our model on.
 
