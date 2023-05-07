@@ -23,10 +23,10 @@ As a second step, we used the model together with [ControlNet model for canny ed
 - **Notebook** : https://colab.research.google.com/drive/1KBZEeWUMcOy_fZygz25D9bPA-xvKcd_q#scrollTo=wsv55Py8onJx
 - **Model** : https://huggingface.co/medmac01/moroccaninteriour-controlNet
 
-### DreamBooth
+## Dataset && Preprocessing
+In order to fine-tune our diffusion model, we collected a dataset of ~200 imgs of Moroccan interior designs. Theses images represent our class **'beldi'** that we trained our model on.
 
-
-### ControlNet
+We first resized our images to (512,512) and then trained the model. But this approach was not efficient as our model learned to generate squeezed objects. The remedy was to crop the images and use every possible part of the image (so no data is lost :D)
 
 ## Results
 
