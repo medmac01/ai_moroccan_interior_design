@@ -10,7 +10,10 @@ Moroccan Interior design generator using diffusion and ControlNet
 
 
 ## Techniques Used
+### DreamBooth
 
+
+### ControlNet
 
 ## Results
 
